@@ -8,7 +8,7 @@
 #define S2 20480
 #define L2 64
 
-
+cYEWDTAJBSMÑLdsbgrfwhjldsfk
 
 double media(int R, int D, double *valores)
 {
