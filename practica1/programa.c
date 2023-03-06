@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pmmintrin.h>
+#include <time.h>
+#include <float.h>
+#include <math.h>
 
 #define S1 768
 #define L1 64
@@ -8,14 +11,23 @@
 #define S2 20480
 #define L2 64
 
-cYEWDTAJBSMÑLdsbgrfwhjldsfk
-
-double media(int R, int D, double *valores)
+void aleatorizarValores(double *array, const int tamanho_array)
 {
-    double Salida = 0;
+    srand(time(NULL));
+    
+    for (int i = 0; i < tamanho_array; i++)
+    {
+        
+        array[i] = (double) rand() / RAND_MAX;
+    }
+}
+
+double media(int R, int D, const double *valores)
+{
+    double salida = 0;
     for (int i = 0; i < (R - 1); i++)
     {
-        Salida += valores[R * D];
+        salida += valores[R * D];
     }
     
     salida /= R;
@@ -26,18 +38,38 @@ double media(int R, int D, double *valores)
 
 int main(int argc, char *argv[])
 {
-    int L[]={0.5*S1,1.5*S1,0.5*S2,0.75*S2,2*S2,4*S2,8*S2};
-    int L[7] =
-    /*        size_t D = 2;
-        size_t R = 4;
-        double* A = _mm_malloc(R*D*sizeof(double),64);
-        A[0]=1;
-        A[1]=2;
-        A[2]=3;
-        A[3]=4;
-        for(int iter=0;iter<4;iter++)
+//    int L[]={(int)0.5*S1,(int)1.5*S1,(int)0.5*S2,(int)0.75*S2,2*S2,4*S2,8*S2};
+    int D = atoi(argv[1]);
+    int L = atoi(argv[2]);
+    int R = 0;
+    if (D < 3)
+    {
+        switch (D)
         {
-                printf("%lf\n",A[iter]);
+            case 0:
+            case 1:
+            case 2:
+                R = 8 * (int) ceil(L / pow(D, 2));
+                R += 1;
+                break;
+            default:
+                fprintf(stdout, "[error]: tamaño incorrecto");
+                exit(-1);
+                break;
+            
+            
         }
-        _mm_free(A);*/
+    }
+    else
+    {
+        R = L;
+    }
+    double *A =(double *)_mm_malloc((R-1) * D * sizeof(double),64);
+    aleatorizarValores(A,(R-1) * D);
+    int indice
+    
+    
+    
 }
+    
+
