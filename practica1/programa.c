@@ -184,7 +184,7 @@ int main(int argc, char *argv[]) {
 
         //Recorremos A y le asignamos valores aleatorios
         for (int i = 0; i < R; ++i) {
-            A[indice[i]]= generarNumero(0,DBL_MAX);
+            A[indice[i]]= rand();
         }
 
         //Sumamos los valores de A y los guardamos en S, hay que ir imprimiendo S todo
@@ -207,10 +207,9 @@ int main(int argc, char *argv[]) {
 
     for (int i = 0; i < 10; ++i) {
         //Imprimimos S[]
-        printf("El valor de S en la repeticion %d es %f",i, S[i]);
+        printf("El valor de S en la repeticion %d es %f\n",i, S[i]);
     }
 
     return 0;
 
 }
-
