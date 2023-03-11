@@ -33,6 +33,7 @@ int calcular_R(double D, int L) {
     //Hay que ver de donde saco 8 xd que no me acuerdo, pero se que es asi(A ver se que es el tamaño de línea pero no me acuerdo de donde sale)
     //sustituir 8 por valor calculado todo
     int R = ceil((8 * L) / (int) D) - 1;
+    return R;
 
 
 }
