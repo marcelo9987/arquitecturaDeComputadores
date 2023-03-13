@@ -53,3 +53,6 @@ dkms.conf
 
 # Archivos compilados
 *.out
+
+# Librerias de JetBrains para el compilado
+cmake-build-debug/
