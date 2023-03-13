@@ -43,6 +43,7 @@ gcc acp1.c -o acp1 -msse3 -O0
 for i in {1..10}
 #for i in {1}
 do
+  echo "D:, L: , R: , ciclos: , accesos: , ciclos/acc:" > datos.$i.log
   #echo "D:, L: , R: , ciclos: , accesos: , ciclos/acc:"
 	#for D in {$D1,$D2,$D3,$D4,$D5}
 	for D in {$D1,$D2,$D3,$D4,$D5,$D6,$D7,$D8,$D9,$D10,$D11,$D12,$D13,$D14}
@@ -51,7 +52,7 @@ do
 		do
 		 # echo "#### Ejecución $i con D=$D y L=$L"
 
-		 echo "D:, L: , R: , ciclos: , accesos: , ciclos/acc:" > datos.$i.log
+
 			./acp1 $D $L >> datos.$i.log
 		done
 	done
