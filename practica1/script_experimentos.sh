@@ -50,6 +50,8 @@ do
 		for L in {$L1,$L2,$L3,$L4,$L5,$L6,$L7}
 		do
 		 # echo "#### Ejecución $i con D=$D y L=$L"
+
+		 echo "D:, L: , R: , ciclos: , accesos: , ciclos/acc:" > datos.$i.log
 			./acp1 $D $L >> datos.$i.log
 		done
 	done
