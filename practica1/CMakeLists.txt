@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.00)
-project(practica1 C)
+cmake_minimum_required(VERSION 3.16)
+project(acp1 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(practica1
-        programa.c)
+add_executable(acp1
+        acp1.c)

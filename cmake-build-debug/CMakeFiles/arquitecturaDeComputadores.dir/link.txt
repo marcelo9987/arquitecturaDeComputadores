@@ -1,0 +1,1 @@
+/usr/bin/gcc -g   CMakeFiles/arquitecturaDeComputadores.dir/practica1/practica1.c.o  -o arquitecturaDeComputadores 
