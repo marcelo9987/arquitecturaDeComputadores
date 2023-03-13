@@ -56,6 +56,7 @@ dkms.conf
 
 # Librerias de JetBrains para el compilado
 cmake-build-debug/
+.idea/
 =======
 #Cosas varias
 *.cPrueba
