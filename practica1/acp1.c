@@ -100,7 +100,7 @@ int calcular_R_casoEspecial(int D, int L)
     //Hay que ver de donde saco 8 xd que no me acuerdo, pero se que es asi(A ver se que es el tamaño de línea pero no me acuerdo de donde sale)
     //sustituir 8 por valor calculado
     
-    int R = ceil((8 * L) / D) - 1;
+    int R = (ceil(kBytesLineaCache/sizeof(double) * L) / D) - 1;
     return R;
     
 }
