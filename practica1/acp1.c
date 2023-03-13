@@ -2,8 +2,24 @@
 #include <stdlib.h>
 #include <pmmintrin.h>
 #include <time.h>
-#include <float.h>
 #include <math.h>
+#include <unistd.h>
+
+//getconf -a --> comando utilizado para saber los tamaños de las caches
+
+#define kBytesLineaCache 64
+
+// Configuración para el Finisterrae III:
+//#define S1 (49152/kBytesLineaCache)
+//#define S2 (1310720/kBytesLineaCache)
+
+// Configuración para ubuntu del portátil de Marcelo:
+//#define S1 (32768/kBytesLineaCache)
+//#define S2 (262144/kBytesLineaCache)
+
+
+
+#define kTotalRepeticiones 10
 
 /* Initialize the cycle counter */
 
@@ -63,17 +79,6 @@ double mhz(int verbose, int sleeptime)
     }
     return rate;
 }
-
-//getconf -a --> comando utilizado para saber los tamaños de las caches
-
-#define S1 768
-//#define L1 64
-
-#define S2 20480
-//#define L2 64
-#define kBytesLineaCache 64
-
-#define kTotalRepeticiones 10
 
 //todo:
 //Tomar la medida de ciclos (utilizando las rutinas que aparecen en el programa C adjunto) totales de las kTotalRepeticiones
@@ -248,7 +253,7 @@ int main(int argc, char *argv[])
     int i_numAccesosMemoria = 4 * R * kTotalRepeticiones; //4 accesos por cada iteración del bucle externo
     double d_ciclosPorAcceso= d_ciclos / i_numAccesosMemoria; //ciclos medios por acceso a memoria
     
-    fprintf(stdout, "D: %d, L: %d, R: %d, ciclos: %f, accesos: %d, ciclos/acc: %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);.
+    fprintf(stdout, "D: %d, L: %d, R: %d, ciclos: %.0f, accesos: %d, ciclos/acc: %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
     
     /*
      * 4.- Imprimir resultados
@@ -257,7 +262,7 @@ int main(int argc, char *argv[])
     for (int repeticion = 0; repeticion < kTotalRepeticiones; ++repeticion)
     {
         //Imprimimos S[]
-        printf("El valor de S en la repeticion %d es %f", repeticion, S[repeticion]);
+        fprintf(stderr,"El valor de S en la repeticion %d es %f\n", repeticion, S[repeticion]);
     }
     
     
