@@ -266,13 +266,17 @@ int main(int argc, char *argv[])
     /*
      * 4.- Imprimir resultados
      */
+    //double media, sum;
     
     for (int repeticion = 0; repeticion < kTotalRepeticiones; ++repeticion)
     {
         //Imprimimos S[]
         fprintf(stderr, "El valor de S en la repeticion %d es %f\n", repeticion, S[repeticion]);
+        //sum += S[repeticion];
     }
-    
+
+    //media = sum/kTotalRepeticiones;
+
     
     /*
      * 5.- Liberar memoria
