@@ -32,10 +32,12 @@ L7=$(($S2 * 8))
 
 gcc acp1.c -o acp1 -msse3 -O0
 
+mkdir -p resultados
+
 for i in {1..10}
 #for i in {1}
 do
-  #echo "D:, L: , R: , ciclos: , accesos: , ciclos/acc:" > datos.$i.log
+  echo "D:, L: , R: , ciclos: , accesos: , ciclos/acc:" > resultados/datos.$i.log
   #echo "D:, L: , R: , ciclos: , accesos: , ciclos/acc:"
 	#for D in {$D1,$D2,$D3,$D4,$D5}
 	for D in {$D1,$D2,$D3,$D4,$D5}
@@ -43,7 +45,7 @@ do
 		for L in {$L1,$L2,$L3,$L4,$L5,$L6,$L7}
 		do
 		 # echo "#### Ejecución $i con D=$D y L=$L"
-			./acp1 $D $L >> datos.$i.csv
+			./acp1 $D $L >> resultados/datos.$i.csv
 		done
 	done
 done

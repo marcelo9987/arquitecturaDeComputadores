@@ -203,7 +203,6 @@ int main(int argc, char *argv[])
 //    strcat(nombreFichero, ".csv");
     
    // FILE *fichero = fopen(nombreFichero, "w+");
-    fprintf(stdout, "D:, L: , R: , ciclos: , accesos: , ciclos/acc:\n");
     /*
      * Repetir kTotalRepeticiones veces la operación de reducción y guardar el resultado en S[]
      */
