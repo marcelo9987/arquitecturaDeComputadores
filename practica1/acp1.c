@@ -4,6 +4,7 @@
 #include <time.h>
 #include <math.h>
 #include <unistd.h>
+#include <string.h>
 
 //getconf -a --> comando utilizado para saber los tamaños de las caches
 
@@ -195,8 +196,14 @@ int main(int argc, char *argv[])
         exit(-1);
     }
     
-    FILE *fichero = fopen(argv[3], "w+");
-    fprintf(fichero,"D:, L: , R: , ciclos: , accesos: , ciclos/acc:\n");
+    //creo el nombre del fichero para que tenga el formato datos.<arg[3]>.csv
+    char *nombreFichero = (char *) malloc(10 + strlen(argv[3]) * sizeof(char));
+    strcpy(nombreFichero, "datos.");
+    strcat(nombreFichero, argv[3]);
+    strcat(nombreFichero, ".csv");
+    
+    FILE *fichero = fopen(nombreFichero, "w+");
+    fprintf(fichero, "D:, L: , R: , ciclos: , accesos: , ciclos/acc:\n");
     /*
      * Repetir kTotalRepeticiones veces la operación de reducción y guardar el resultado en S[]
      */
@@ -276,14 +283,14 @@ int main(int argc, char *argv[])
         fprintf(stderr, "El valor de S en la repeticion %d es %f\n", repeticion, S[repeticion]);
         //sum += S[repeticion];
     }
-
+    
     //media = sum/kTotalRepeticiones;
-
+    
     
     /*
      * 5.- Liberar memoria
      */
-    
+    free(nombreFichero);
     fclose(fichero);
     
     _mm_free(A);
