@@ -37,7 +37,7 @@ mkdir -p resultados
 for i in {1..10}
 #for i in {1}
 do
-  echo "D:, L: , R: , ciclos: , accesos: , ciclos/acc:" > resultados/datos.$i.log
+  echo "D:, L: , R: , ciclos: , accesos: , ciclos/acc:" > resultados/datos.$i.csv
   #echo "D:, L: , R: , ciclos: , accesos: , ciclos/acc:"
 	#for D in {$D1,$D2,$D3,$D4,$D5}
 	for D in {$D1,$D2,$D3,$D4,$D5}
