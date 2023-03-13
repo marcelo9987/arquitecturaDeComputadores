@@ -7,6 +7,8 @@
 
 //getconf -a --> comando utilizado para saber los tamaños de las caches
 
+#define DEBUG 0
+
 #define kBytesLineaCache 64
 
 // Configuración para el Finisterrae III:
@@ -252,9 +254,14 @@ int main(int argc, char *argv[])
     
     double d_ciclos = get_counter();
     int i_numAccesosMemoria = 4 * R * kTotalRepeticiones; //4 accesos por cada iteración del bucle externo
-    double d_ciclosPorAcceso= d_ciclos / i_numAccesosMemoria; //ciclos medios por acceso a memoria
+    double d_ciclosPorAcceso = d_ciclos / i_numAccesosMemoria; //ciclos medios por acceso a memoria
     
+    #if DEBUG
     fprintf(stdout, "D: %d, L: %d, R: %d, ciclos: %.0f, accesos: %d, ciclos/acc: %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
+    #elif !DEBUG
+    fprintf(stdout, "%d, %d, %d, %.0f, %d, %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
+    #endif
+    
     
     /*
      * 4.- Imprimir resultados
@@ -263,7 +270,7 @@ int main(int argc, char *argv[])
     for (int repeticion = 0; repeticion < kTotalRepeticiones; ++repeticion)
     {
         //Imprimimos S[]
-        fprintf(stderr,"El valor de S en la repeticion %d es %f\n", repeticion, S[repeticion]);
+        fprintf(stderr, "El valor de S en la repeticion %d es %f\n", repeticion, S[repeticion]);
     }
     
     
