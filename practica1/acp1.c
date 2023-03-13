@@ -87,13 +87,14 @@ double mhz(int verbose, int sleeptime)
 //}
 
 
+/*
 
-/**
  * Calcula el valor de R para los casos en que D sea menor a 3 (2^D < 8) y por tanto debamos calcular la distribución de las líneas
  * para cada valor de D hay que tomar 7 medidas(L: 0.5*S1, 1.5*S1, 0.5*S2, 0.75*S2, 2*S2,4*S2, 8*S2)
  * @param D
  * @return
  */
+/*
 int calcular_R_casoEspecial(int D, int L)
 {
     //todo: revisar
@@ -103,7 +104,7 @@ int calcular_R_casoEspecial(int D, int L)
     int R = (ceil(kBytesLineaCache/sizeof(double) * L) / D) - 1;
     return R;
     
-}
+}*/
 
 /**
  * @brief
