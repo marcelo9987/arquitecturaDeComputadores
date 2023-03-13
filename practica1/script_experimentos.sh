@@ -23,12 +23,12 @@ D13=$((2 ** 12))
 D14=$((2 ** 13))
 
 # Para el portátil de Marcelo:
-S1=$((32768/64))
-S2=$((262144/64))
+#S1=$((32768/64))
+#S2=$((262144/64))
 
 # Para el Finisterrae III:
-#S1=$((49152/64))
-#S2=$((1310720/64))
+S1=$((49152/64))
+S2=$((1310720/64))
 
 L1=$(($S1 / 2))
 L2=$(($S1 + $S1 / 2))
@@ -50,7 +50,7 @@ do
 		for L in {$L1,$L2,$L3,$L4,$L5,$L6,$L7}
 		do
 		 # echo "#### Ejecución $i con D=$D y L=$L"
-			./acp1 $D $L > datos.$i.log
+			./acp1 $D $L >> datos.$i.log
 		done
 	done
 done
