@@ -269,7 +269,7 @@ int main(int argc, char *argv[])
     #if DEBUG
     fprintf(stdout, "D: %d, L: %d, R: %d, ciclos: %.0f, accesos: %d, ciclos/acc: %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
     #elif !DEBUG
-    fprintf(stdout, "%d? %d? %d? %.0f? %d? %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
+    fprintf(stdout, "%d, %d, %d, %.0f, %d, %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
     #endif
     
     
