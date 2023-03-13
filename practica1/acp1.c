@@ -190,7 +190,7 @@ double generarNumeroAleatorio(double d_min, double d_max)
 
 int main(int argc, char *argv[])
 {
-    if (argc != 4)
+    if (argc != 3)
     {
         fprintf(stdout, "[error]: número de argumentos incorrecto");
         exit(-1);
