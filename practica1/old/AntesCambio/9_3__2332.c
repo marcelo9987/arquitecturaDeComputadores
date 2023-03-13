@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
     double *A =(double *)_mm_malloc((R-1) * D * sizeof(double),64);//todo: LIBERAME!
     aleatorizarValores(i_valores, (R - 1) * D);
     
-    for (int i_indiceParaElIndice=0; i_indiceParaElIndice<R;i_indiceParaElIndice++)//Menudo plot-twist
+    for (int i_indiceParaElIndice=0; i_indiceParaElIndice<R;i_indiceParaElIndice++)
     {
         A[indice[i_indiceParaElIndice]] = media(R, D, i_valores);
     }
