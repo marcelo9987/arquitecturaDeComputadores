@@ -197,13 +197,13 @@ int main(int argc, char *argv[])
     }
     
     //creo el nombre del fichero para que tenga el formato datos.<arg[3]>.csv
-    char *nombreFichero = (char *) malloc(10 + strlen(argv[3]) * sizeof(char));
-    strcpy(nombreFichero, "datos.");
-    strcat(nombreFichero, argv[3]);
-    strcat(nombreFichero, ".csv");
+//    char *nombreFichero = (char *) malloc(10 + strlen(argv[3]) * sizeof(char));
+//    strcpy(nombreFichero, "datos.");
+//    strcat(nombreFichero, argv[3]);
+//    strcat(nombreFichero, ".csv");
     
-    FILE *fichero = fopen(nombreFichero, "w+");
-    fprintf(fichero, "D:, L: , R: , ciclos: , accesos: , ciclos/acc:\n");
+   // FILE *fichero = fopen(nombreFichero, "w+");
+    fprintf(stdout, "D:, L: , R: , ciclos: , accesos: , ciclos/acc:\n");
     /*
      * Repetir kTotalRepeticiones veces la operación de reducción y guardar el resultado en S[]
      */
@@ -268,7 +268,7 @@ int main(int argc, char *argv[])
     #if DEBUG
     fprintf(stdout, "D: %d, L: %d, R: %d, ciclos: %.0f, accesos: %d, ciclos/acc: %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
     #elif !DEBUG
-    fprintf(fichero, "%d, %d, %d, %.0f, %d, %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
+    fprintf(stdout, "%d, %d, %d, %.0f, %d, %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
     #endif
     
     
@@ -290,8 +290,8 @@ int main(int argc, char *argv[])
     /*
      * 5.- Liberar memoria
      */
-    free(nombreFichero);
-    fclose(fichero);
+//    free(nombreFichero);
+//    fclose(fichero);
     
     _mm_free(A);
     _mm_free(ind);
