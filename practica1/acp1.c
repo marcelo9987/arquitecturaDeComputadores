@@ -110,9 +110,9 @@ int calcular_R_casoEspecial(int D, int L)
 }*/
 
 /**
- * @brief
- * @param D
- * @return
+ * @brief Calcula el valor de R
+ * @param D Separación entre lecturas
+ * @return R: Numero de iteraciones
  */
 int calcular_R(int D, int L)
 {
@@ -161,10 +161,10 @@ int calcular_R(int D, int L)
 }*/
 
 /**
- * @brief Genera un número aleatorio en el intervalo [d_min, d_max)
- * @param d_min 
- * @param d_max 
- * @return 
+ * @brief Genera un número aleatorio en el intervalo [d_min, d_max).
+ * @param d_min El valor mínimo del intervalo.
+ * @param d_max El valor máximo del intervalo.
+ * @return Un número aleatorio en el intervalo [d_min, d_max).
  */
 
 double generarNumeroAleatorio(double d_min, double d_max)
@@ -175,6 +175,7 @@ double generarNumeroAleatorio(double d_min, double d_max)
     
     do
     {
+        //Genero un número aleatorio entre 0 y RAND_MAX
         aleatorio = rand();
     } while (aleatorio == RAND_MAX); //Así evito dar el valor máximo (Se ha pedido intervalo abierto por la derecha)
     
@@ -247,6 +248,7 @@ int main(int argc, char *argv[])
      * 3.- Medida de tiempos
      */
     
+    //Inicializamos el contador de ciclos
     start_counter();
     
     //Repetir kTotalRepeticiones veces
@@ -267,14 +269,15 @@ int main(int argc, char *argv[])
     #if DEBUG
     fprintf(stdout, "D: %d, L: %d, R: %d, ciclos: %.0f, accesos: %d, ciclos/acc: %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
     #elif !DEBUG
-    fprintf(stdout, "%d, %d, %d, %.0f, %d, %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
+    fprintf(stdout, "%d? %d? %d? %.0f? %d? %f\n", D, L, R, d_ciclos, i_numAccesosMemoria, d_ciclosPorAcceso);
     #endif
     
     
     /*
      * 4.- Imprimir resultados
      */
-    //double media, sum;
+    
+    
     
     for (int repeticion = 0; repeticion < kTotalRepeticiones; ++repeticion)
     {
